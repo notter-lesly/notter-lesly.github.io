@@ -1,9 +1,9 @@
-<template id="TheFooter">
-    <nav class="contacts">
-        <ul v-for="contact in contacts" :key="contact" >
-            <li><a :href="contact.link">{{contact.site}}</a></li>
-        </ul>
-    </nav>
+<template id="footer">
+        <nav class="contacts">
+            <ul v-for="contact in contacts" :key="contact" >
+                <li><a :href="contact.link">{{contact.site}}</a></li>
+            </ul>
+        </nav>
 </template>
 
 <script setup>
@@ -18,15 +18,23 @@ const contacts = [
 </script>
 
 <style>
+
+#footer{
+    background-color: #3C4770;
+    height: 15vh;
+    
+}
+
 .contacts{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 .contacts a{
-cursor:pointer,
-
+cursor:pointer;
+color:rgb(210, 210, 210);
 }
 
 </style>
