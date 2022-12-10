@@ -1,6 +1,8 @@
 <template>
 <div id="measure">
-<div class="triangle" v-bind:style="{borderLeft: measureBar}">
+
+<div class="skill-fill" v-bind:style="{width: measureBar}">
+
 </div>
 </div>
 </template>
@@ -23,18 +25,15 @@ const measureBar = ref(props.skillMeasure)
 <style scoped>
 
 #measure{
-width: 300px;
 height: 1rem;    
 background-color: #AAB1C3;
 border: 1px solid black;
-position: relative;
+width: 8rem;
 }
-.triangle {
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  border-top: 10px solid #3C4770;
-  border-bottom: 0;
+
+.skill-fill{
+    background-color: #3C4770;
+height: 100%;
 }
 
 
