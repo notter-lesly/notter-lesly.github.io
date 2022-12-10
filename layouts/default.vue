@@ -44,8 +44,6 @@ function scrollDown(){
   }
   body {
       line-height: 1;
- 
-  
   }
   ol, ul {
       list-style: none;
@@ -67,7 +65,7 @@ function scrollDown(){
     display: grid;
     grid-template-columns: 2rem 6rem 6rem 6rem 2rem;
     grid-template-rows: 2rem auto;
-    height: 70vh;	
+    min-height: 70vh;	
     background-color:#DFCFD5;
   }  
 
@@ -76,8 +74,22 @@ function scrollDown(){
   }
 
   .sub-title{
-    font-size: 18px;
+    font-size: 1.3rem;
     text-align: center;
     font-family: 'karla';
+    padding-bottom: 1rem;
   }
+
+  p{ 
+   line-height:1.4rem;
+   font-family: 'spectral', 'roboto';
+   padding: 0.2rem 0 0.5rem 0;
+
+}
+
+h2{
+  font-family: 'karla';
+  font-size: 0.8rem;
+  padding: 1rem 0 0 0;
+}
   </style>

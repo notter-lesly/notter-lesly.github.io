@@ -1,19 +1,16 @@
 <template>
   <section id="project">
-      <h1 class="sub-title">Projects</h1>
+      <h1 class="sub-title">Experiences</h1>
       <ul>
-        <li v-for="slide in mySlides" :key="mySlides.key">
-        <h1> {{ slide.name }}</h1>
-        <img :src="slide.url"/>
-        
+        <li v-for=" experience in experiences" :key="experiences.key">
+        <p class="company"> {{ experience.company }} </p>
+        <p class="time"> {{experience.time}}</p>
+        <p > {{experience.description}}</p>
+        <b>Tools/Technologies used:</b> <p> {{experience.tech }}</p>
+      <p> {{experience.tools }}</p>   
+ 
         </li>
       </ul>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-     
-      <br />
-
     </section>
     
     
@@ -22,12 +19,18 @@
 <script setup>
 
 
-const mySlides =[
-{'name': 'animals', 'url': new URL('../assets/animals.jpg', import.meta.url).href, 'key': 0},
-{'name': 'dog', 'url': new URL('../assets/dog.jpg', import.meta.url).href, 'key': 1},
-{'name': 'orphanage', 'url': new URL('../assets/orphanage.jpg', import.meta.url).href, 'key': 2},
-{'name': '', 'url': new URL('../assets/store.jpg', import.meta.url).href, 'key': 3},
-
+const experiences =[
+{'company': 'Digital Society School(AUAS)',
+ 'time': '09/2021 - 01/2022',
+ 'description':'In this traineeship, I worked on a project about the e-assessment of students practical skills with Erasmus, Inter-Cultural, Universitat autònoma de Barcelona and West University of Timisoara. I also participated in various workshops on design thinking, design in general and technology.',
+ 'tools': 'Agil/Scrum, Design thinking, Figma, AdobeXD, Ui, Uxresearch, Usertest',
+ 'key': 0},
+{'company': 'Cm.com',
+ 'time': '02/2022 - 02/2023',
+ 'description': 'At CM I worked with maintaining, adding new features and fixing bugs to our own Website and to our Content Management System (CMS). I also helped in a major update to our CMS frontend, where we were fully rebuilding our frontend from scratch using TypeScript and Nuxt.',
+ 'tech':'Html, CSS/Sass, Javascript, Typescript, Vue3, Nuxt3, Vite, Cypress, Docker',
+ 'tools': 'Gitlab, sketch, invision, Agil/Scrum',
+ 'key':1},
 ]
 </script>
 
@@ -37,12 +40,19 @@ const mySlides =[
     grid-column: 2/5;
     grid-row: 2;
 }
-img{
-    width: 100%
+.company{
+  font-size: 1rem;
+  font-family: 'karla';
+  padding-bottom: 0.3rem;
+  font-weight: bold;
+}
+.time{
+  font-size: 0.8rem;
+  font-family: 'roboto';
+  padding-bottom: 0.2rem;
 }
 
-.dots{
- text-align: center;
+li{
+  padding-bottom: 0.5rem;
 }
-
 </style>

@@ -1,21 +1,18 @@
 <template>
-<div id="measure">
-
-<div class="skill-fill" v-bind:style="{width: measureBar}">
-
-</div>
-</div>
+    <div id="measure">
+        <div class="skill-fill" v-bind:style="{width: measureBar}">
+        </div>
+    </div>
 </template>
 
 
 <script setup lang="ts">
 
 interface MeasureProps{
-
-skillMeasure: Project
+    skillMeasure: string
 }
 
-const props= defineProps<MeasureProps>()
+const props = defineProps<MeasureProps>()
 
 const measureBar = ref(props.skillMeasure)
 
@@ -33,7 +30,7 @@ width: 8rem;
 
 .skill-fill{
     background-color: #3C4770;
-height: 100%;
+    height: 100%;
 }
 
 

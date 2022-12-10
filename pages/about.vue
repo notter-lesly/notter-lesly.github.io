@@ -5,7 +5,7 @@
 
 <img class= "image" :src="picture">
 <ul>
-<li v-for="phrases in aboutMe" :key="phrases.key" class="text"> {{phrases.value}}</li>
+<li v-for="phrases in aboutMe" :key="phrases.key"> <p>{{phrases.value}}</p></li>
 </ul> 
 
 </div>
@@ -44,11 +44,6 @@ padding:1rem;
 border-radius: 20%;
 }
 
-.text{ 
-   line-height:1.4rem;
-   padding: 0.2rem;
-   font-family: 'spectral', 'roboto';
 
-}
 
 </style>

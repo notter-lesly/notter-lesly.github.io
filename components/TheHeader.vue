@@ -18,7 +18,7 @@
 //Consts
 const about="About"
 const skills="skills"
-const projects="projects"
+const projects="experience"
 const contact="contacts"
 const emit = defineEmits(['event'])
 
@@ -45,7 +45,7 @@ width: 100%;
     }
 
 .header-title{
-    font-size:20px;
+    font-size:1.3rem;
     margin: 1rem 0 0 0;
     font-family: 'karla';
     padding:12px;
@@ -53,7 +53,7 @@ width: 100%;
 }
 
 .header-subtitle{
-    font-size:16px;
+    font-size:1rem;
     margin: 0 0 1rem 0;
     font-family: 'spectral';
     font-weight: 400;
