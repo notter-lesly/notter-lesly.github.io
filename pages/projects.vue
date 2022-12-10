@@ -1,6 +1,6 @@
 <template>
   <section id="project">
-      <h1>Projects</h1>
+      <h1 class="sub-title">Projects</h1>
       <ul>
         <li v-for="slide in mySlides" :key="mySlides.key">
         <h1> {{ slide.name }}</h1>
@@ -35,6 +35,7 @@ const mySlides =[
 
 #project{
     grid-column: 2/5;
+    grid-row: 2;
 }
 img{
     width: 100%

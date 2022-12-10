@@ -1,6 +1,6 @@
 <template>
 <div id="about">
-    <h1 class="title">About Me</h1>
+    <h1 class="sub-title">About Me</h1>
 <div  class="flex">
 
 <img class= "image" :src="picture">
@@ -28,8 +28,8 @@ const aboutMe = [{'value' : 'My name is Lesly Notter dos Anjos and I am a Fronte
 
 #about{
     grid-column: 2/5;
+    grid-row:2;
     justify-content: center;
-    margin: 1rem 0 1rem 0;
 }
 
 .flex{
@@ -47,12 +47,8 @@ border-radius: 20%;
 .text{ 
    line-height:1.4rem;
    padding: 0.2rem;
+   font-family: 'spectral', 'roboto';
 
 }
-.title{
-    font-size: 20px;
-    text-align: center;
-    padding:6px;
-  }
 
 </style>

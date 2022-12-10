@@ -6,14 +6,13 @@
 
 <script setup lang="ts">
 
-export interface Props {
-    buttonText: string
+interface ButtonProps {
+    buttonText: Project
 
 }
 
-const props =  withDefaults(defineProps<Props>(), {
-    buttonText: ''
-})
+const props =  defineProps<ButtonProps>()
+
 </script>
 
 <style>
@@ -25,6 +24,7 @@ border-radius: 20%;
 color:azure;
 border-color:blueviolet;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+font-family: 'spectral';
 }
 
 

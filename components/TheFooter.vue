@@ -30,6 +30,7 @@ const contacts = [
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    font-family: 'spectral';
 }
 
 .contacts a{

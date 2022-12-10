@@ -66,11 +66,18 @@ function scrollDown(){
   main{
     display: grid;
     grid-template-columns: 2rem 6rem 6rem 6rem 2rem;
+    grid-template-rows: 2rem auto;
     height: 70vh;	
     background-color:#DFCFD5;
   }  
 
   .router-link-active .router-link-exact-active{
     background-color: pink;
+  }
+
+  .sub-title{
+    font-size: 18px;
+    text-align: center;
+    font-family: 'karla';
   }
   </style>

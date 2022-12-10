@@ -1,8 +1,8 @@
 <template>
     <div class="theHeader">
     <div class="name">
-        <h1 class="title"> Lesly Notter</h1>
-        <h3 class="subtitle"> Front End Developer</h3>
+        <h1 class="header-title"> Lesly Notter</h1>
+        <h3 class="header-subtitle"> Front End Developer</h3>
     </div>
     <nav class="menu">
         <nuxtLink to="/about"><Button :button-text="about"> </Button></nuxtLink>
@@ -44,17 +44,19 @@ width: 100%;
 
     }
 
-.title{
+.header-title{
     font-size:20px;
     margin: 1rem 0 0 0;
-    font-family: 'Tangerine';
+    font-family: 'karla';
     padding:12px;
     text-align: center;
 }
 
-.subtitle{
+.header-subtitle{
     font-size:16px;
     margin: 0 0 1rem 0;
+    font-family: 'spectral';
+    font-weight: 400;
 }
 
 a.nuxt-link{
