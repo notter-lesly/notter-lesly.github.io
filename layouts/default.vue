@@ -148,8 +148,8 @@
 
   main {
     display: grid;
-    grid-template-columns: 2rem 6rem 6rem 6rem 2rem;
-    grid-template-rows: 2rem auto;
+    grid-template-columns: 2rem 6rem auto 6rem 2rem;
+    grid-template-rows: 7rem auto;
     min-height: 70vh;
     background-color: #dfcfd5;
   }

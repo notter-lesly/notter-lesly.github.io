@@ -4,13 +4,15 @@
     <div class="flex">
       <img
         class="image"
-        :src="picture"
-      />
-      <ul>
+        :src="picture" />
+      <div class="name">
+        <h1 class="about-title">Lesly Notter</h1>
+        <h3 class="about-subtitle">Front End Developer</h3>
+      </div>
+      <ul class="about-text">
         <li
           v-for="phrases in aboutMe"
-          :key="phrases.key"
-        >
+          :key="phrases.key">
           <p>{{ phrases.value }}</p>
         </li>
       </ul>
@@ -41,6 +43,10 @@
     justify-content: center;
   }
 
+  .about-text {
+    padding: 1rem 0;
+  }
+
   .flex {
     display: flex;
     flex-direction: column;
@@ -51,5 +57,24 @@
     max-width: 8rem;
     padding: 1rem;
     border-radius: 20%;
+  }
+
+  .about-title {
+    font-size: 1.1rem;
+    font-family: "spectral";
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .about-subtitle {
+    font-size: 0.8rem;
+    font-family: "spectral";
+    font-weight: 400;
+  }
+
+  .name {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 </style>
