@@ -25,28 +25,65 @@
         </g>
       </g>
     </svg>
-    <div
-      class="menu-mobile"
-      v-show="menu">
-      <div>
-        <nav class="menu-mobile-links">
-          <nuxtLink
-            to="/about"
-            @click="openMenu">
-            About
-          </nuxtLink>
-          <nuxtLink
-            to="/skills"
-            @click="openMenu">
-            skills
-          </nuxtLink>
-          <nuxtLink
-            to="/projects"
-            @click="openMenu">
-            Experience
-          </nuxtLink>
-        </nav>
+    <Transition name="slide-down">
+      <div v-show="menu">
+        <div class="menu-mobile">
+          <div class="name">
+            <h1 class="about-title">Lesly Notter</h1>
+            <h3 class="about-subtitle">Front End Developer</h3>
+          </div>
+          <svg
+            class="menu"
+            @click="openMenu"
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="13"
+            viewBox="0 0 12 13"
+            fill="white">
+            <line
+              y1="-0.5"
+              x2="16.0534"
+              y2="-0.5"
+              transform="matrix(0.68483 -0.728703 0.551828 0.833958 1.00616 12.6981)"
+              stroke="#D7D7D7" />
+            <line
+              y1="-0.5"
+              x2="16.0534"
+              y2="-0.5"
+              transform="matrix(0.68483 0.728703 -0.551828 0.833958 0 1)"
+              stroke="#D7D7D7" />
+          </svg>
+          <ul class="menu-mobile-links">
+            <li>
+              <nuxtLink
+                to="/about"
+                @click="openMenu">
+                About
+              </nuxtLink>
+            </li>
+            <li>
+              <nuxtLink
+                to="/skills"
+                @click="openMenu">
+                skills
+              </nuxtLink>
+            </li>
+            <li>
+              <nuxtLink
+                to="/projects"
+                @click="openMenu">
+                Experience
+              </nuxtLink>
+            </li>
+          </ul>
+          <div class="menu-decoration-left" />
+          <div class="menu-decoration-right" />
+        </div>
       </div>
+    </Transition>
+    <div class="name">
+      <h1 class="about-title">Lesly Notter</h1>
+      <h3 class="about-subtitle">Front End Developer</h3>
     </div>
 
     <div v-if="desktop">
@@ -73,6 +110,7 @@
   const emit = defineEmits(["event"]);
   const menu = ref<boolean>(false);
   const desktop = false;
+  const menuDecoration = new URL("../assets/about.jpeg", import.meta.url).href;
 
   //functions
   function scrollFooter() {
@@ -92,7 +130,8 @@
     position: fixed;
     height: 72px;
     display: grid;
-    grid-template-columns: 2rem auto 2rem;
+    grid-template-columns: 1.5rem 6rem auto 6rem 1.5rem;
+    grid-template-rows: 2rem 1rem 6rem auto;
   }
 
   a.nuxt-link {
@@ -102,12 +141,16 @@
     grid-column: 2;
     display: flex;
     align-self: center;
+    grid-row: 2;
   }
   .menu-mobile {
-    height: 100%;
     width: 100%;
-    background-color: #3c4770;
-    position: fixed;
+    background-color: #aab1c3;
+    position: absolute;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5rem 6rem auto 6rem 1.5rem;
+    grid-template-rows: 2rem 1rem 3rem 10rem 10rem auto;
   }
   .menu-mobile-links {
     display: flex;
@@ -115,53 +158,116 @@
     flex-direction: column;
     gap: 1rem;
     position: relative;
+    grid-column: 2/5;
+    grid-row: 4;
+  }
+
+  .menu-mobile li {
+    border-bottom: 1px solid #c7d5e2;
+    width: 100%;
+    padding: 1rem 0;
   }
 
   .menu-mobile-links a {
     cursor: pointer;
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     font-family: "karla";
   }
-
-  /*
- .name {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .header-title {
-    font-size: 1.3rem;
-    margin: 1rem 0 0 0;
-    font-family: "karla";
-    padding: 12px;
+  .about-title {
+    font-size: 1.1rem;
+    font-family: "spectral";
+    padding-bottom: 0.5rem;
     text-align: center;
+    align-self: stretch;
   }
 
-  .header-subtitle {
-    font-size: 1rem;
-    margin: 0 0 1rem 0;
+  .about-subtitle {
+    font-size: 0.8rem;
     font-family: "spectral";
     font-weight: 400;
   }
 
-  a.nuxt-link {
-    color: black;
-  }
-
-  .router-link-active .linkButton {
-    background-color: #3c4770;
-  }
-  .menu-links {
+  .name {
     display: flex;
-    justify-content: space-around;
+    align-items: flex-end;
+    flex-direction: column;
+    grid-column: 3/5;
+    justify-content: center;
+    text-align: initial;
+    grid-row: 2;
   }
 
-    .menu a {
-    cursor: pointer;
-    text-decoration: underline;
+  .background-styling {
+    background-color: pink;
   }
-*/
+
+  .menu-decoration-left {
+    width: 15rem;
+    height: 5rem;
+    position: absolute;
+    border: 1px solid white;
+    align-self: center;
+    grid-row: 4;
+    z-index: 1;
+    border-left: none;
+    border-radius: 20%;
+    opacity: 0.5;
+    transform: rotate(45deg);
+  }
+  .menu-decoration-right {
+    width: 15rem;
+    height: 5rem;
+    position: absolute;
+    border: 1px solid white;
+    align-self: center;
+    grid-column: 3/5;
+    grid-row: 6;
+    z-index: 1;
+    border-left: none;
+    border-radius: 20%;
+    opacity: 0.5;
+    transform: rotate(-45deg);
+  }
+
+  /*
+   .name {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .header-title {
+      font-size: 1.3rem;
+      margin: 1rem 0 0 0;
+      font-family: "karla";
+      padding: 12px;
+      text-align: center;
+    }
+
+    .header-subtitle {
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      font-family: "spectral";
+      font-weight: 400;
+    }
+
+    a.nuxt-link {
+      color: black;
+    }
+
+    .router-link-active .linkButton {
+      background-color: #3c4770;
+    }
+    .menu-links {
+      display: flex;
+      justify-content: space-around;
+    }
+
+      .menu a {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  */
 </style>

@@ -5,10 +5,6 @@
       <img
         class="image"
         :src="picture" />
-      <div class="name">
-        <h1 class="about-title">Lesly Notter</h1>
-        <h3 class="about-subtitle">Front End Developer</h3>
-      </div>
       <ul class="about-text">
         <li
           v-for="phrases in aboutMe"
@@ -45,6 +41,7 @@
 
   .about-text {
     padding: 1rem 0;
+    margin-bottom: 1rem;
   }
 
   .flex {
@@ -54,27 +51,36 @@
   }
 
   .image {
-    max-width: 8rem;
+    max-width: 7rem;
     padding: 1rem;
     border-radius: 20%;
   }
 
-  .about-title {
-    font-size: 1.1rem;
-    font-family: "spectral";
-    padding-bottom: 0.5rem;
-    text-align: center;
+  .menu-decoration-left {
+    width: 15rem;
+    height: 5rem;
+    position: absolute;
+    border: 1px solid white;
+    align-self: center;
+    grid-row: 4;
+    z-index: 1;
+    border-left: none;
+    border-radius: 20%;
+    opacity: 0.5;
+    transform: rotate(45deg);
   }
-
-  .about-subtitle {
-    font-size: 0.8rem;
-    font-family: "spectral";
-    font-weight: 400;
-  }
-
-  .name {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  .menu-decoration-right {
+    width: 15rem;
+    height: 5rem;
+    position: absolute;
+    border: 1px solid white;
+    align-self: center;
+    grid-column: 3/5;
+    grid-row: 6;
+    z-index: 1;
+    border-left: none;
+    border-radius: 20%;
+    opacity: 0.5;
+    transform: rotate(-45deg);
   }
 </style>
