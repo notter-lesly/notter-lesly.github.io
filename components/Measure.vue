@@ -1,12 +1,3 @@
-<template>
-  <div id="measure">
-    <div
-      class="skill-fill"
-      v-bind:style="{ width: measureBar }"
-    ></div>
-  </div>
-</template>
-
 <script setup lang="ts">
   interface MeasureProps {
     skillMeasure: string;
@@ -17,7 +8,15 @@
   const measureBar = ref(props.skillMeasure);
 </script>
 
-<style scoped>
+<template>
+  <div id="measure">
+    <div
+      class="skill-fill"
+      v-bind:style="{ width: measureBar }"></div>
+  </div>
+</template>
+
+<style scoped lang="scss">
   #measure {
     height: 1rem;
     background-color: #aab1c3;
