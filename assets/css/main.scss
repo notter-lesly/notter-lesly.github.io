@@ -1,5 +1,6 @@
 @import './fonts.scss';
 
+//reset 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -55,22 +56,23 @@ table {
   .sub-title {
     font-size: 1.3rem;
     text-align: center;
-    font-family: "karla";
+    font-family: "$main-font";
     padding-bottom: 1rem;
   }
 
   p {
     line-height: 1.4rem;
-    font-family: "spectral", "roboto";
+    font-family: "$text-font", "roboto";
     padding: 0.2rem 0 0.5rem 0;
   }
 
   h2 {
-    font-family: "karla";
+    font-family: "$main-font";
     font-size: 0.8rem;
     padding: 1rem 0 0 0;
   }
 
+//mixins
 @mixin for-phone-only {
   @media (max-width: 599px) { @content; }
 }
@@ -86,3 +88,27 @@ table {
 @mixin for-big-desktop-up {
   @media (min-width: 1800px) { @content; }
 }
+
+@mixin plain-text{
+  font-family: '$text-font';
+  font-size: 16px;
+  color:whitesmoke;
+}
+
+@mixin titles{
+  font-family: '$main-font';
+  font-size: 20px;
+  color:azure
+}
+
+@mixin sub-titles{
+  font-family: '$text-font';
+  font-size:18px;
+  color:gray;
+}
+
+//variables
+$border:  #8a2be2;
+$background:  #3c4770;
+$main-font:'karla';
+$text-font:'spectral';

@@ -33,6 +33,12 @@ const aboutMe = [
   grid-column: 2/5;
   grid-row: 2;
   justify-content: center;
+
+  @include for-tablet-landscape-up {
+    grid-column: 3/6;
+    grid-row: 3;
+    color: white;
+  }
 }
 
 .about-text {
@@ -44,10 +50,15 @@ const aboutMe = [
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }
 
 .image {
-  max-width: 7rem;
+  max-width: 10rem;
   padding: 1rem;
   border-radius: 20%;
 }

@@ -37,7 +37,7 @@ const tools = [
   @include for-tablet-landscape-up {
     z-index: 2;
     grid-column: 4/5;
-    grid-row: 4;
+    grid-row: 3;
     color: white;
   }
 }

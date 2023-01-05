@@ -18,6 +18,9 @@ const props = defineProps<ButtonProps>()
   border-color: #8a2be2;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
     rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  font-family: 'spectral';
+  font-family: '$text-font';
+  @include for-tablet-landscape-up {
+    font-size: 18px;
+  }
 }
 </style>

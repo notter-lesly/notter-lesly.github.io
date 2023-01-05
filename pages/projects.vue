@@ -65,7 +65,7 @@ const experiences = [
 
 .company {
   font-size: 1rem;
-  font-family: 'karla';
+  font-family: '$main-font';
   padding-bottom: 0.3rem;
   font-weight: bold;
 }

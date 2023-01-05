@@ -33,7 +33,7 @@ const contacts = [
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    font-family: 'spectral';
+    font-family: '$text-font';
     z-index: 2;
     height: 100%;
   }

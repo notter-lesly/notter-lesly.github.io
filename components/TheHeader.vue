@@ -191,11 +191,11 @@ a.nuxt-link {
   color: white;
   text-decoration: none;
   font-size: 20px;
-  font-family: 'karla';
+  font-family: '$main-font';
 }
 .about-title {
   font-size: 1.1rem;
-  font-family: 'spectral';
+  font-family: '$text-font';
   padding-bottom: 0.5rem;
   text-align: center;
   align-self: stretch;
@@ -204,8 +204,9 @@ a.nuxt-link {
 
 .about-subtitle {
   font-size: 0.8rem;
-  font-family: 'spectral';
+  font-family: '$text-font';
   font-weight: 400;
+  color: rgb(189, 189, 189);
 }
 
 .name {
@@ -259,7 +260,7 @@ a.nuxt-link {
 .header-title {
   font-size: 1.3rem;
   margin: 1rem 0 0 0;
-  font-family: 'karla';
+  font-family: '$main-font';
   padding: 12px;
   text-align: center;
 }
@@ -267,7 +268,7 @@ a.nuxt-link {
 .header-subtitle {
   font-size: 1rem;
   margin: 0 0 1rem 0;
-  font-family: 'spectral';
+  font-family: '$text-font';
   font-weight: 400;
 }
 
