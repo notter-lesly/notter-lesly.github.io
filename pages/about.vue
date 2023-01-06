@@ -2,7 +2,7 @@
 const aboutMe = [
   {
     value:
-      'My name is Lesly Notter dos Anjos, I Swiss/Brazilian living in the Netherlands since 2020.',
+      'My name is Lesly Notter dos Anjos, I am a Swiss/Brazilian citizien living in the Netherlands since 2020.',
     key: 0,
   },
   {

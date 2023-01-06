@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const secondExperience = false
+const cmExperience = ref(true)
+
 const experiences = [
   {
     company: 'Digital Society School(AUAS)',
@@ -28,21 +29,27 @@ const experiences = [
 <template>
   <section id="project">
     <h1 class="sub-title">Experiences</h1>
-    <ul class="mobile-experience">
-      <li v-for="experience in experiences" :key="experiences.key">
-        <p class="company">{{ experience.company }}</p>
-        <p class="time">{{ experience.time }}</p>
-        <p>{{ experience.description1 }}</p>
-        <p>{{ experience.description2 }}</p>
-        <p class="tools">Tools/Technologies used:</p>
-        <p>{{ experience.tech }}</p>
-        <p>{{ experience.tools }}</p>
-      </li>
-    </ul>
-    <Button @click="secondExperience = !secondExperience" button-text=" DSS" />
-    <Button button-text="Cm.com" />
-    <Cm />
-    <Dss v-if="secondExperience" />
+    <div class="mobile-experience">
+      <ul>
+        <li v-for="experience in experiences" :key="experience.key">
+          <p class="company">{{ experience.company }}</p>
+          <p class="time">{{ experience.time }}</p>
+          <p>{{ experience.description1 }}</p>
+          <p>{{ experience.description2 }}</p>
+          <p class="tools">Tools/Technologies used:</p>
+          <p>{{ experience.tech }}</p>
+          <p>{{ experience.tools }}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="desktop-experience">
+      <div class="experience-buttons">
+        <Button @click="cmExperience = false" button-text=" DSS" />
+        <Button @click="cmExperience = true" button-text="Cm" />
+      </div>
+      <Cm v-if="cmExperience" />
+      <Dss v-if="!cmExperience" />
+    </div>
   </section>
 </template>
 
@@ -54,12 +61,11 @@ const experiences = [
 
   @include for-tablet-landscape-up {
     grid-column: 3/6;
-    grid-row: 3;
+    grid-row: 3/-1;
     z-index: 2;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   ul {
@@ -67,10 +73,6 @@ const experiences = [
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
-
-    @include for-tablet-landscape-up {
-      justify-content: space-between;
-    }
   }
 }
 
@@ -99,8 +101,29 @@ li {
   font-weight: bold;
 }
 .mobile-experience {
+  display: block;
   @include for-tablet-landscape-up {
     display: none;
+  }
+}
+.desktop-experience {
+  display: none;
+  @include for-tablet-landscape-up {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 1rem;
+  }
+  .experience-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    Button {
+      min-width: 3rem;
+      :focus {
+        background-color: pink;
+      }
+    }
   }
 }
 </style>

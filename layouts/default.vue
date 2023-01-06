@@ -1,13 +1,8 @@
-<script setup lang="ts">
-function scrollDown() {
-  const footer = document.querySelector('#footer')
-  footer.scrollIntoView()
-}
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div if()>
-    <TheHeader @event="scrollDown" />
+    <TheHeader />
     <main>
       <slot />
     </main>
@@ -26,7 +21,7 @@ main {
   @include for-tablet-landscape-up {
     display: grid;
     grid-template-columns: 2rem 6rem 12rem auto 12rem 6rem 2rem;
-    grid-template-rows: 7rem 9rem auto;
+    grid-template-rows: 7rem 9rem 5rem auto;
     background-size: 100%;
   }
 }

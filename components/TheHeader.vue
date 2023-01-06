@@ -5,16 +5,11 @@ const skills = 'skills'
 const projects = 'experience'
 const home = 'home'
 const contact = 'contacts'
-const emit = defineEmits(['event'])
 const menu = ref<boolean>(false)
 const desktop = false
 const picture = new URL('../assets/me.png', import.meta.url).href
 
 //functions
-function scrollFooter() {
-  emit('event')
-}
-
 function openMenu() {
   menu.value = !menu.value
 }
