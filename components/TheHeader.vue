@@ -127,7 +127,7 @@ function openMenu() {
   grid-template-rows: 2rem 1rem 6rem auto;
 
   @include for-tablet-landscape-up {
-    height: 30%;
+    height: 12rem;
     width: 100%;
     background-repeat: no-repeat;
     background-size: 100%;

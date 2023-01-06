@@ -16,7 +16,7 @@ const picture = new URL('../assets/about.jpeg', import.meta.url).href
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
   @include for-tablet-landscape-up {
     justify-content: flex-start;
     grid-column: 3/6;
@@ -32,11 +32,12 @@ const picture = new URL('../assets/about.jpeg', import.meta.url).href
 
 .image {
   max-width: 10rem;
+  width: 6rem;
   padding: 1rem;
   border-radius: 20%;
   @include for-tablet-landscape-up {
     max-width: 9rem;
-    padding: 0;
+    width: auto;
   }
 }
 </style>
