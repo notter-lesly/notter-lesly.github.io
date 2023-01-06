@@ -21,7 +21,7 @@ const contacts = [
 
 <style scoped lang="scss">
 #footer {
-  background-color: #3c4770;
+  background-image: url('../assets/footer.png');
   height: 15vh;
 
   ::after {
@@ -41,9 +41,6 @@ const contacts = [
   .contacts a {
     cursor: pointer;
     color: rgb(210, 210, 210);
-  }
-  @include for-tablet-landscape-up {
-    background-image: url('../assets/footer.png');
   }
 }
 </style>

@@ -3,6 +3,7 @@
 const about = 'About'
 const skills = 'skills'
 const projects = 'experience'
+const home = 'home'
 const contact = 'contacts'
 const emit = defineEmits(['event'])
 const menu = ref<boolean>(false)
@@ -80,6 +81,9 @@ function openMenu() {
           </svg>
           <ul class="menu-mobile-links">
             <li>
+              <nuxtLink to="/" @click="openMenu"> Home </nuxtLink>
+            </li>
+            <li>
               <nuxtLink to="/about" @click="openMenu"> About </nuxtLink>
             </li>
             <li>
@@ -101,6 +105,7 @@ function openMenu() {
 
     <div class="desktop">
       <nav class="menu-links">
+        <nuxtLink to="/"><Button :button-text="home"> </Button></nuxtLink>
         <nuxtLink to="/about"><Button :button-text="about"> </Button></nuxtLink>
         <nuxtLink to="/skills"
           ><Button :button-text="skills"> </Button
@@ -108,9 +113,6 @@ function openMenu() {
         <nuxtLink to="/projects">
           <Button :button-text="projects"> </Button>
         </nuxtLink>
-        <a @click="scrollFooter" class="scroll-footer"
-          ><Button :button-text="contact"> </Button
-        ></a>
       </nav>
     </div>
   </div>
@@ -118,7 +120,8 @@ function openMenu() {
 
 <style scoped lang="scss">
 .theHeader {
-  background-color: #aab1c3;
+  background-image: url('../assets/background.png');
+  object-fit: fill;
   width: 100%;
   box-shadow: 0 0 5px 0 rgb(16 30 30 / 10%), 0 0 7px 0 rgb(16 30 30 / 15%),
     0 0 9px 0 rgb(16 30 30 / 10%);
@@ -131,10 +134,8 @@ function openMenu() {
   @include for-tablet-landscape-up {
     height: 30%;
     width: 100%;
-    background-image: url('../assets/background.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    object-fit: fill;
     border-bottom-right-radius: 80%;
     border-bottom-left-radius: 80%;
     z-index: 0;
@@ -159,10 +160,14 @@ a.nuxt-link {
   display: flex;
   align-self: center;
   grid-row: 2;
+  color: white;
+  @include for-tablet-landscape-up {
+    display: none;
+  }
 }
 .menu-mobile {
   width: 100%;
-  background-color: #aab1c3;
+  background-color: #212020;
   position: absolute;
   height: 100vh;
   display: grid;
@@ -217,6 +222,9 @@ a.nuxt-link {
   justify-content: center;
   text-align: initial;
   grid-row: 2;
+  @include for-tablet-landscape-up {
+    align-items: center;
+  }
 }
 
 .background-styling {
@@ -249,12 +257,6 @@ a.nuxt-link {
   border-radius: 20%;
   opacity: 0.5;
   transform: rotate(-45deg);
-}
-
-.name {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 .header-title {

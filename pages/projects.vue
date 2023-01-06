@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const secondExperience = false
 const experiences = [
   {
     company: 'Digital Society School(AUAS)',
@@ -27,7 +28,7 @@ const experiences = [
 <template>
   <section id="project">
     <h1 class="sub-title">Experiences</h1>
-    <ul>
+    <ul class="mobile-experience">
       <li v-for="experience in experiences" :key="experiences.key">
         <p class="company">{{ experience.company }}</p>
         <p class="time">{{ experience.time }}</p>
@@ -38,6 +39,10 @@ const experiences = [
         <p>{{ experience.tools }}</p>
       </li>
     </ul>
+    <Button @click="secondExperience = !secondExperience" button-text=" DSS" />
+    <Button button-text="Cm.com" />
+    <Cm />
+    <Dss v-if="secondExperience" />
   </section>
 </template>
 
@@ -45,12 +50,12 @@ const experiences = [
 #project {
   grid-column: 2/5;
   grid-row: 2;
+  color: white;
 
   @include for-tablet-landscape-up {
     grid-column: 3/6;
     grid-row: 3;
     z-index: 2;
-    color: white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -59,7 +64,13 @@ const experiences = [
 
   ul {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    @include for-tablet-landscape-up {
+      justify-content: space-between;
+    }
   }
 }
 
@@ -86,5 +97,10 @@ li {
 
 .tools {
   font-weight: bold;
+}
+.mobile-experience {
+  @include for-tablet-landscape-up {
+    display: none;
+  }
 }
 </style>

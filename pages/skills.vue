@@ -33,12 +33,12 @@ const tools = [
 #skills {
   grid-column: 2/5;
   grid-row: 2;
+  color: white;
 
   @include for-tablet-landscape-up {
     z-index: 2;
     grid-column: 4/5;
     grid-row: 3;
-    color: white;
   }
 }
 
