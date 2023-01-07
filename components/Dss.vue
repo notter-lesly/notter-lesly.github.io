@@ -19,11 +19,26 @@ const experiences = [
   <ul>
     <li v-for="experience in experiences" :key="experience.key">
       <p class="company">{{ experience.company }}</p>
-      <p class="time">{{ experience.time }}</p>
+      <p>{{ experience.time }}</p>
       <p>{{ experience.description1 }}</p>
       <p>{{ experience.description2 }}</p>
-      <p class="tools">Tools/Technologies used:</p>
+      <p>Tools/Technologies used:</p>
       <p>{{ experience.tools }}</p>
     </li>
   </ul>
 </template>
+
+<style scoped lang="scss">
+.company {
+  @include titles;
+  font-size: 1rem;
+}
+
+.time {
+  @include sub-title;
+}
+
+.tools {
+  font-weight: bold;
+}
+</style>

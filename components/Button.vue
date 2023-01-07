@@ -2,7 +2,6 @@
 interface ButtonProps {
   buttonText: string
 }
-
 const props = defineProps<ButtonProps>()
 </script>
 
@@ -12,15 +11,16 @@ const props = defineProps<ButtonProps>()
 
 <style scoped lang="scss">
 .linkButton {
+  font-family: $text-font;
   background-color: $background;
+  border-color: $border;
   border-radius: 20%;
   color: azure;
-  border-color: $border;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
     rgba(0, 0, 0, 0.05) 0px 5px 10px;
-  font-family: '$text-font';
+
   @include for-tablet-landscape-up {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>

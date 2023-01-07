@@ -1,10 +1,9 @@
 <script setup lang="ts">
 //Consts
+const home = 'Home'
 const about = 'About'
-const skills = 'skills'
-const projects = 'experience'
-const home = 'home'
-const contact = 'contacts'
+const skills = 'Skills'
+const projects = 'Experience'
 const menu = ref<boolean>(false)
 const desktop = false
 const picture = new URL('../assets/me.png', import.meta.url).href
@@ -146,6 +145,26 @@ function openMenu() {
     grid-row: 1/-1;
     flex-direction: row;
   }
+  a.nuxt-link {
+    color: black;
+  }
+
+  .router-link-active .linkButton {
+    background-color: $focus-color;
+  }
+  .menu-links {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+  }
+
+  .menu a {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 a.nuxt-link {
   color: rgb(221, 221, 221);
@@ -168,6 +187,11 @@ a.nuxt-link {
   display: grid;
   grid-template-columns: 1.5rem 6rem auto 6rem 1.5rem;
   grid-template-rows: 2rem 1rem 3rem 10rem 10rem auto;
+
+  li {
+    border-bottom: 1px solid #c7d5e2;
+    padding: 1rem 0;
+  }
 }
 
 .menu-mobile-links {
@@ -180,33 +204,12 @@ a.nuxt-link {
   grid-row: 4;
 }
 
-.menu-mobile li {
-  border-bottom: 1px solid #c7d5e2;
-  width: 100%;
-  padding: 1rem 0;
-}
-
 .menu-mobile-links a {
   cursor: pointer;
   color: white;
   text-decoration: none;
   font-size: 20px;
-  font-family: '$main-font';
-}
-.about-title {
-  font-size: 1.1rem;
-  font-family: '$text-font';
-  padding-bottom: 0.5rem;
-  text-align: center;
-  align-self: stretch;
-  color: azure;
-}
-
-.about-subtitle {
-  font-size: 0.8rem;
-  font-family: '$text-font';
-  font-weight: 400;
-  color: rgb(189, 189, 189);
+  font-family: $main-font;
 }
 
 .name {
@@ -217,8 +220,31 @@ a.nuxt-link {
   justify-content: center;
   text-align: initial;
   grid-row: 2;
+
   @include for-tablet-landscape-up {
     align-items: center;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 50% 50%;
+    row-gap: 0.2rem;
+  }
+}
+.about-title {
+  @include titles;
+  text-align: center;
+  align-self: center;
+
+  @include for-tablet-landscape-up {
+    grid-column: 4;
+  }
+}
+
+.about-subtitle {
+  @include sub-title;
+  @include for-tablet-landscape-up {
+    grid-column: 4;
+    grid-row: 3;
+    text-align: right;
   }
 }
 
@@ -252,41 +278,5 @@ a.nuxt-link {
   border-radius: 20%;
   opacity: 0.5;
   transform: rotate(-45deg);
-}
-
-.header-title {
-  font-size: 1.3rem;
-  margin: 1rem 0 0 0;
-  font-family: '$main-font';
-  padding: 12px;
-  text-align: center;
-}
-
-.header-subtitle {
-  font-size: 1rem;
-  margin: 0 0 1rem 0;
-  font-family: '$text-font';
-  font-weight: 400;
-}
-
-a.nuxt-link {
-  color: black;
-}
-
-.router-link-active .linkButton {
-  background-color: palevioletred;
-}
-.menu-links {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-direction: row;
-  width: 100%;
-  align-items: center;
-}
-
-.menu a {
-  cursor: pointer;
-  text-decoration: underline;
 }
 </style>

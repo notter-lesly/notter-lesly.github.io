@@ -4,12 +4,12 @@ const picture = new URL('../assets/about.jpeg', import.meta.url).href
 
 <template>
   <div id="index">
-    <h1 class="wave">Hello, I am Lesly!</h1>
+    <h1 class="title">Hello, I am Lesly!</h1>
     <img class="image" :src="picture" />
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 #index {
   grid-column: 2/5;
   grid-row: 2;
@@ -21,13 +21,8 @@ const picture = new URL('../assets/about.jpeg', import.meta.url).href
     justify-content: flex-start;
     grid-column: 3/6;
     grid-row: 3/-1;
-    gap: 3rem;
+    gap: 1rem;
   }
-}
-.wave {
-  font-family: $main-font;
-  font-size: 2rem;
-  color: white;
 }
 
 .image {

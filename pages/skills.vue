@@ -1,9 +1,9 @@
 <template>
   <div id="skills">
-    <h1 class="sub-title">My skills</h1>
+    <h1 class="title">My skills</h1>
     <ul class="skills-list">
       <li class="skill" v-for="skill in skills" key="skill.key">
-        {{ skill.value }}
+        <p>{{ skill.value }}</p>
         <Measure :skillMeasure="skill.measure" />
       </li>
     </ul>
@@ -29,7 +29,7 @@ const tools = [
 ]
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 #skills {
   grid-column: 2/5;
   grid-row: 2;
@@ -43,7 +43,6 @@ const tools = [
 }
 
 .skills-list {
-  font-family: 'roboto';
   font-size: 1rem;
   margin-top: 1rem;
   display: flex;

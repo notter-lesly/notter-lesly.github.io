@@ -29,7 +29,7 @@ const aboutMe = [
 
 <template>
   <div id="about">
-    <h1 class="sub-title">About Me</h1>
+    <h1 class="title">About Me</h1>
     <div class="flex">
       <ul class="about-text">
         <li v-for="phrases in aboutMe" :key="phrases.key">
@@ -40,7 +40,7 @@ const aboutMe = [
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 #about {
   grid-column: 2/5;
   grid-row: 2;
@@ -64,36 +64,7 @@ const aboutMe = [
   align-items: center;
   @include for-tablet-landscape-up {
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
   }
-}
-
-.menu-decoration-left {
-  width: 15rem;
-  height: 5rem;
-  position: absolute;
-  border: 1px solid white;
-  align-self: center;
-  grid-row: 4;
-  z-index: 1;
-  border-left: none;
-  border-radius: 20%;
-  opacity: 0.5;
-  transform: rotate(45deg);
-}
-.menu-decoration-right {
-  width: 15rem;
-  height: 5rem;
-  position: absolute;
-  border: 1px solid white;
-  align-self: center;
-  grid-column: 3/5;
-  grid-row: 6;
-  z-index: 1;
-  border-left: none;
-  border-radius: 20%;
-  opacity: 0.5;
-  transform: rotate(-45deg);
 }
 </style>

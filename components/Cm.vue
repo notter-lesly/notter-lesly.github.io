@@ -9,7 +9,7 @@ const experiences = [
       'Management system: rebuild from scratch with TypeScript and Nuxt.',
     tech: 'Html, CSS/Sass, Javascript, Typescript, Vue3, Nuxt3, Vite, Cypress, Docker',
     tools: 'Gitlab, sketch, invision, Agil/Scrum',
-    key: 1,
+    key: 0,
   },
 ]
 </script>
@@ -28,11 +28,17 @@ const experiences = [
   </ul>
 </template>
 
-<style>
+<style scoped lang="scss">
 .company {
+  @include titles;
   font-size: 1rem;
-  font-family: '$main-font';
-  padding-bottom: 0.3rem;
-  font-weight: bolder;
+}
+
+.time {
+  @include sub-title;
+}
+
+.tools {
+  font-weight: bold;
 }
 </style>

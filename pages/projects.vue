@@ -28,7 +28,7 @@ const experiences = [
 
 <template>
   <section id="project">
-    <h1 class="sub-title">Experiences</h1>
+    <h1 class="title">Experiences</h1>
     <div class="mobile-experience">
       <ul>
         <li v-for="experience in experiences" :key="experience.key">
@@ -53,11 +53,11 @@ const experiences = [
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 #project {
   grid-column: 2/5;
   grid-row: 2;
-  color: white;
+  color: azure;
 
   @include for-tablet-landscape-up {
     grid-column: 3/6;
@@ -66,26 +66,19 @@ const experiences = [
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
+    .title {
+      margin-bottom: 1rem;
+    }
   }
 }
 
 .company {
-  font-size: 1rem;
-  font-family: '$main-font';
-  padding-bottom: 0.3rem;
+  font-family: $main-font;
   font-weight: bold;
 }
 
 .time {
   font-size: 0.8rem;
-  font-family: 'roboto';
   padding-bottom: 0.2rem;
 }
 
@@ -120,9 +113,10 @@ li {
     gap: 5rem;
     Button {
       min-width: 3rem;
-      :focus {
-        background-color: pink;
-      }
+    }
+    :focus,
+    :active {
+      background-color: $focus-color;
     }
   }
 }

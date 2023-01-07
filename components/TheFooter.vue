@@ -12,7 +12,7 @@ const contacts = [
 <template id="footer">
   <nav>
     <ul class="contacts">
-      <li v-for="contact in contacts" :key="contact">
+      <li v-for="contact in contacts" :contact.key="contact">
         <a :href="contact.link">{{ contact.site }}</a>
       </li>
     </ul>
@@ -24,16 +24,12 @@ const contacts = [
   background-image: url('../assets/footer.png');
   height: 15vh;
 
-  ::after {
-    border-top-right-radius: -10px;
-  }
-
   .contacts {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    font-family: '$text-font';
+    font-family: $text-font;
     z-index: 2;
     height: 100%;
   }

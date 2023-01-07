@@ -49,28 +49,12 @@ table {
 	border-spacing: 0;
 }
 
-  .router-link-active .router-link-exact-active {
-    background-color: pink;
-  }
-
-  .sub-title {
-    font-size: 1.3rem;
-    text-align: center;
-    font-family: "$main-font";
-    padding-bottom: 1rem;
-  }
-
-  p {
-    line-height: 1.4rem;
-    font-family: "$text-font";
-    padding: 0.2rem 0 0.5rem 0;
-  }
-
-  h2 {
-    font-family: "$main-font";
-    font-size: 0.8rem;
-    padding: 1rem 0 0 0;
-  }
+//variables
+$border:  #8a2be2;
+$background:  #3c4770;
+$main-font:'Poppins';
+$text-font:'Open Sans', sans-serif;
+$focus-color: #dda7d4;
 
 //mixins
 @mixin for-phone-only {
@@ -90,25 +74,41 @@ table {
 }
 
 @mixin plain-text{
-  font-family: '$text-font';
+  font-family: $text-font;
   font-size: 16px;
   color:whitesmoke;
+   line-height: 1.4rem;
+    padding: 0.2rem 0 0.5rem 0;
 }
 
 @mixin titles{
-  font-family: '$main-font';
-  font-size: 20px;
+  font-family: $main-font;
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
   color:azure
 }
 
-@mixin sub-titles{
-  font-family: '$text-font';
-  font-size:18px;
-  color:gray;
+@mixin sub-title{
+  font-family: $text-font;
+  font-size:0.8rem;
+  color: rgb(189, 189, 189);
 }
 
-//variables
-$border:  #8a2be2;
-$background:  #3c4770;
-$main-font:'karla';
-$text-font:'spectral';
+.router-link-active .router-link-exact-active {
+  background-color: pink;
+}
+
+.title {
+  @include titles;
+  text-align: center;
+}
+
+p {
+ @include plain-text;
+}
+
+.linkButton {
+  cursor: pointer;
+}
+
+
